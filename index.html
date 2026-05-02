@@ -14,26 +14,24 @@ body {
 
 /* HERO */
 .hero {
-  height:100vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('PASTE-BANNER-LINK-HERE');
+  height:90vh;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+             url('PASTE-BANNER-LINK-HERE');
   background-size:cover;
-  background-position:center;
   display:flex;
-  flex-direction:column;
   justify-content:center;
   align-items:center;
-  text-align:center;
+  flex-direction:column;
 }
 
 .hero h1 {
-  font-size:45px;
-  letter-spacing:6px;
+  font-size:42px;
+  letter-spacing:5px;
   color:#d4af37;
 }
 
 .hero p {
-  color:#ccc;
+  color:#aaa;
 }
 
 .hero a {
@@ -42,45 +40,34 @@ body {
   background:#d4af37;
   color:black;
   text-decoration:none;
-  border-radius:6px;
-  font-weight:bold;
+  border-radius:5px;
 }
 
 /* SECTION */
 .section {
   padding:40px 20px;
+  text-align:center;
 }
 
 .section h2 {
   color:#d4af37;
-  text-align:center;
-  margin-bottom:20px;
 }
 
-/* HORIZONTAL SCROLL */
-.slider {
-  display:flex;
-  overflow-x:auto;
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:20px;
-  padding-bottom:10px;
+  margin-top:20px;
 }
 
-.slider::-webkit-scrollbar {
-  height:6px;
-}
-.slider::-webkit-scrollbar-thumb {
-  background:#d4af37;
-  border-radius:10px;
-}
-
-/* CARDS */
+/* CARD */
 .card {
-  min-width:250px;
   background:#111;
   border-radius:15px;
   overflow:hidden;
-  transition:0.3s;
   border:1px solid #222;
+  transition:0.3s;
 }
 
 .card:hover {
@@ -88,16 +75,17 @@ body {
   border-color:#d4af37;
 }
 
+/* IMAGE (PREMIUM FILTER) */
 .card img {
   width:100%;
-  height:200px;
+  height:220px;
   object-fit:cover;
-  filter:brightness(0.85);
+  filter:brightness(0.6) contrast(1.2) saturate(0.8);
 }
 
+/* TEXT */
 .card h3 {
   padding:10px;
-  font-size:18px;
 }
 
 .card a {
@@ -106,18 +94,16 @@ body {
   padding:10px;
   background:#d4af37;
   color:black;
-  text-align:center;
-  border-radius:6px;
   text-decoration:none;
+  border-radius:5px;
 }
 
 /* ABOUT */
 .about {
   background:#111;
-  padding:30px;
   margin:20px;
-  border-radius:12px;
-  text-align:center;
+  padding:20px;
+  border-radius:10px;
 }
 
 /* WHATSAPP */
@@ -128,53 +114,51 @@ body {
   background:#25D366;
   padding:14px;
   border-radius:50%;
-  text-decoration:none;
   color:white;
-  font-size:20px;
+  text-decoration:none;
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="hero">
 <h1>DEVKI TEXTILE</h1>
-<p>Luxury Fabric Collection</p>
+<p>Luxury Bottom Fabric Collection</p>
 <a href="https://wa.me/919328149912">Get Latest Rates</a>
 </div>
 
 <div class="section">
 <h2>Premium Collection</h2>
 
-<div class="slider">
+<div class="grid">
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c">
+<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
 <h3>Poly Rayon</h3>
 <a href="https://wa.me/919328149912?text=Poly Rayon rate">Enquire</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
+<img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
 <h3>American Crepe</h3>
 <a href="https://wa.me/919328149912?text=American Crepe rate">Enquire</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1593032465171-8f0b8d53c3c4">
+<img src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21">
 <h3>Dull Santoon</h3>
 <a href="https://wa.me/919328149912?text=Dull Santoon rate">Enquire</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1519741497674-611481863552">
+<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
 <h3>Indian Santoon</h3>
 <a href="https://wa.me/919328149912?text=Indian Santoon rate">Enquire</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1520975922203-bc9c6c8f0b8e">
+<img src="https://images.unsplash.com/photo-1593032465171-8f0b8d53c3c4">
 <h3>French Crepe</h3>
 <a href="https://wa.me/919328149912?text=French Crepe rate">Enquire</a>
 </div>
@@ -184,7 +168,7 @@ body {
 
 <div class="about">
 <h2>About Devki Textile</h2>
-<p>We provide premium quality bottom fabrics with daily updated rates. Trusted by traders in textile market.</p>
+<p>We provide premium quality fabrics with daily updated rates. Trusted in textile market for quality and service.</p>
 </div>
 
 <a class="whatsapp" href="https://wa.me/919328149912">💬</a>
