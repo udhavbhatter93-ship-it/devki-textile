@@ -14,7 +14,6 @@ body{
   font-family:'Poppins',sans-serif;
   background:#0a0a0a;
   color:#fff;
-  overflow-x:hidden;
 }
 
 /* NAV */
@@ -23,7 +22,6 @@ body{
   width:100%;
   top:0;
   display:flex;
-  justify-content:space-between;
   align-items:center;
   padding:15px 30px;
   backdrop-filter:blur(10px);
@@ -31,8 +29,9 @@ body{
   z-index:1000;
 }
 
-.logo img{
-  height:45px;
+.logo{
+  display:flex;
+  align-items:center;
 }
 
 /* HERO */
@@ -47,20 +46,13 @@ body{
   text-align:center;
 }
 
-.hero img{
-  width:120px;
-  margin-bottom:20px;
-}
-
 .hero h1{
   font-size:60px;
   letter-spacing:6px;
   font-family:'Playfair Display',serif;
 }
 
-.hero p{
-  color:#aaa;
-}
+.hero p{color:#aaa;}
 
 .btn{
   margin-top:20px;
@@ -72,10 +64,7 @@ body{
 }
 
 /* SLIDER */
-.slider{
-  overflow:hidden;
-  padding:60px 0;
-}
+.slider{overflow:hidden;padding:60px 0;}
 
 .slide-track{
   display:flex;
@@ -106,6 +95,13 @@ body{
   filter:brightness(1);
 }
 
+.card::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
 .card h3{
   position:absolute;
   bottom:15px;
@@ -119,14 +115,9 @@ body{
 }
 
 /* SECTION */
-.section{
-  padding:80px 20px;
-  text-align:center;
-}
+.section{padding:80px 20px;text-align:center;}
 
-.about{
-  background:linear-gradient(135deg,#111,#1a1a1a);
-}
+.about{background:linear-gradient(135deg,#111,#1a1a1a);}
 
 .about p{
   max-width:600px;
@@ -185,21 +176,30 @@ body{
 
 <body>
 
-<!-- NAV -->
+<!-- NAV WITH LOGO -->
 <div class="nav">
   <div class="logo">
-    <img src="logo.png">
+    
+    <!-- SVG LOGO (Premium Style) -->
+    <svg width="160" height="40" viewBox="0 0 300 60">
+      <text x="0" y="40" fill="#d4af37" font-size="28" font-family="Playfair Display">
+        DEVKI
+      </text>
+      <text x="140" y="40" fill="#ffffff" font-size="20" font-family="Poppins">
+        TEXTILE
+      </text>
+    </svg>
+
   </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
   <div>
-    <img src="logo.png">
     <h1>DEVKI TEXTILE</h1>
     <p>Premium Bottom Fabrics Supplier</p>
 
-    <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20fabric%20rates.%20Please%20share%20details." class="btn">
+    <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20fabric%20rates." class="btn">
       Get Latest Rate
     </a>
   </div>
@@ -210,27 +210,27 @@ body{
   <div class="slide-track">
 
     <div class="card" onclick="sendWhatsApp('Poly Rayon')">
-      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+      <img src="https://images.unsplash.com/photo-1603251579431-8041402bdeda">
       <h3>Poly Rayon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('American Crepe')">
-      <img src="https://images.unsplash.com/photo-1583001809873-a128495da465">
+      <img src="https://images.unsplash.com/photo-1582582429416-ec3f3f1b3b7c">
       <h3>American Crepe</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('Dull Santoon')">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+      <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
       <h3>Dull Santoon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('Indian Santoon')">
-      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
       <h3>Indian Santoon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('French Crepe')">
-      <img src="https://images.unsplash.com/photo-1503342452485-86ff0a1a1b4d">
+      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
       <h3>French Crepe</h3>
     </div>
 
@@ -241,8 +241,7 @@ body{
 <section class="section about">
   <h2>About Us</h2>
   <p>
-    Devki Textile delivers premium quality bottom fabrics at wholesale rates.
-    Trusted by businesses for consistency and pricing.
+    Devki Textile delivers premium quality fabrics at wholesale rates.
   </p>
 </section>
 
@@ -257,22 +256,22 @@ body{
 </section>
 
 <!-- FLOAT -->
-<a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20fabric%20rates." class="whatsapp">💬</a>
+<a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20rates." class="whatsapp">💬</a>
 
 <!-- STICKY -->
 <div class="sticky-bar">
-  <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20Please%20send%20today%20price%20list.">
+  <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20Send%20price%20list.">
     📲 Get Today’s Fabric Rates
   </a>
 </div>
 
 <script>
 function sendWhatsApp(product){
-  let message = `Hello Devki Textile, I am interested in ${product}. Please share price and details.`;
+  let message = `Hello Devki Textile, I am interested in ${product}. Please share price.`;
   let url = "https://wa.me/919328149912?text=" + encodeURIComponent(message);
   window.open(url, '_blank');
 }
 </script>
 
 </body>
-  </html>
+</html>
