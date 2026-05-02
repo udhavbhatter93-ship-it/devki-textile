@@ -12,7 +12,7 @@
 
 body{
   font-family:'Poppins',sans-serif;
-  background:#0a0a0a;
+  background:#050505;
   color:#fff;
 }
 
@@ -21,11 +21,9 @@ body{
   position:fixed;
   width:100%;
   top:0;
-  display:flex;
-  align-items:center;
   padding:15px 30px;
   backdrop-filter:blur(10px);
-  background:rgba(0,0,0,0.4);
+  background:rgba(0,0,0,0.5);
   z-index:1000;
 }
 
@@ -42,39 +40,50 @@ body{
 }
 
 .hero h1{
-  font-size:60px;
-  letter-spacing:6px;
+  font-size:64px;
+  letter-spacing:8px;
   font-family:'Playfair Display',serif;
 }
 
-.hero p{color:#aaa;}
+.hero p{
+  color:#bbb;
+  letter-spacing:2px;
+}
 
+/* BUTTON */
 .btn{
   margin-top:20px;
   padding:14px 35px;
   border-radius:30px;
-  background:#25D366;
+  background:linear-gradient(45deg,#25D366,#1ebe5d);
+  box-shadow:0 5px 20px rgba(37,211,102,0.4);
   color:#fff;
   text-decoration:none;
 }
 
-/* SLIDER */
-.slider{overflow:hidden;padding:60px 0;}
+/* SECTION */
+.section{
+  padding:80px 20px;
+  text-align:center;
+}
 
-.slide-track{
+/* PRODUCTS */
+.slider{
   display:flex;
-  width:calc(250px * 10);
-  animation:scroll 20s linear infinite;
+  overflow-x:auto;
+  gap:20px;
+  padding:20px;
 }
 
 .card{
-  width:250px;
+  min-width:250px;
   height:320px;
-  margin:0 15px;
   border-radius:20px;
   overflow:hidden;
   position:relative;
-  cursor:pointer;
+  background:#0d0d0d;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+  transition:0.4s;
 }
 
 .card img{
@@ -83,36 +92,29 @@ body{
   object-fit:cover;
 }
 
-/* PERFECT SPLITS */
-.img1{ object-position:5% center; }
-.img2{ object-position:25% center; }
-.img3{ object-position:50% center; }
-.img4{ object-position:75% center; }
-.img5{ object-position:95% center; }
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 20px 50px rgba(0,0,0,0.9);
+}
 
 .card::after{
   content:'';
   position:absolute;
   inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background:linear-gradient(to top, rgba(0,0,0,0.9), transparent);
 }
 
 .card h3{
   position:absolute;
   bottom:15px;
   left:15px;
+  font-weight:500;
 }
 
-/* ANIMATION */
-@keyframes scroll{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
+/* ABOUT */
+.about{
+  background:linear-gradient(135deg,#111,#1a1a1a);
 }
-
-/* SECTION */
-.section{padding:80px 20px;text-align:center;}
-
-.about{background:linear-gradient(135deg,#111,#1a1a1a);}
 
 .about p{
   max-width:600px;
@@ -143,8 +145,8 @@ body{
   background:#25D366;
   padding:16px;
   border-radius:50%;
-  color:#fff;
   text-decoration:none;
+  color:#fff;
 }
 
 /* STICKY */
@@ -160,6 +162,7 @@ body{
 .sticky-bar a{
   color:#fff;
   text-decoration:none;
+  font-weight:bold;
 }
 
 /* MOBILE */
@@ -171,15 +174,11 @@ body{
 
 <body>
 
-<!-- NAV WITH LOGO -->
+<!-- NAV (LOGO) -->
 <div class="nav">
-  <svg width="160" height="40" viewBox="0 0 300 60">
-    <text x="0" y="40" fill="#d4af37" font-size="28" font-family="Playfair Display">
-      DEVKI
-    </text>
-    <text x="140" y="40" fill="#ffffff" font-size="20" font-family="Poppins">
-      TEXTILE
-    </text>
+  <svg width="160" height="40">
+    <text x="0" y="30" fill="#d4af37" font-size="26">DEVKI</text>
+    <text x="120" y="30" fill="#fff" font-size="18">TEXTILE</text>
   </svg>
 </div>
 
@@ -189,38 +188,40 @@ body{
     <h1>DEVKI TEXTILE</h1>
     <p>Premium Bottom Fabrics Supplier</p>
 
-    <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20fabric%20rates." class="btn">
+    <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20Send%20latest%20rates" class="btn">
       Get Latest Rate
     </a>
   </div>
 </section>
 
-<!-- SLIDER WITH SPLIT IMAGE -->
-<section class="slider">
-  <div class="slide-track">
+<!-- PRODUCTS -->
+<section class="section">
+  <h2 style="margin-bottom:30px;letter-spacing:3px;">OUR FABRICS</h2>
+
+  <div class="slider">
 
     <div class="card" onclick="sendWhatsApp('Poly Rayon')">
-      <img src="fabrics.jpg" class="img1">
+      <img src="fabric_1.png">
       <h3>Poly Rayon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('American Crepe')">
-      <img src="fabrics.jpg" class="img2">
+      <img src="fabric_2.png">
       <h3>American Crepe</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('Dull Santoon')">
-      <img src="fabrics.jpg" class="img3">
+      <img src="fabric_3.png">
       <h3>Dull Santoon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('Indian Santoon')">
-      <img src="fabrics.jpg" class="img4">
+      <img src="fabric_4.png">
       <h3>Indian Santoon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('French Crepe')">
-      <img src="fabrics.jpg" class="img5">
+      <img src="fabric_5.png">
       <h3>French Crepe</h3>
     </div>
 
@@ -231,7 +232,8 @@ body{
 <section class="section about">
   <h2>About Us</h2>
   <p>
-    Devki Textile delivers premium quality fabrics at wholesale rates.
+    Devki Textile is a trusted wholesale supplier of premium bottom fabrics,
+    known for consistent quality, best pricing, and long-term business relationships.
   </p>
 </section>
 
@@ -246,20 +248,19 @@ body{
 </section>
 
 <!-- FLOAT -->
-<a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20rates." class="whatsapp">💬</a>
+<a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile" class="whatsapp">💬</a>
 
 <!-- STICKY -->
 <div class="sticky-bar">
-  <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20Send%20price%20list.">
-    📲 Get Today’s Fabric Rates
+  <a href="https://wa.me/919328149912?text=Send%20price%20list">
+    📲 Get Today’s Fabric Rates on WhatsApp
   </a>
 </div>
 
 <script>
 function sendWhatsApp(product){
-  let message = `Hello Devki Textile, I am interested in ${product}. Please share price.`;
-  let url = "https://wa.me/919328149912?text=" + encodeURIComponent(message);
-  window.open(url, '_blank');
+  let msg = `Hello Devki Textile, I am interested in ${product}. Please share price.`;
+  window.open("https://wa.me/919328149912?text="+encodeURIComponent(msg));
 }
 </script>
 
