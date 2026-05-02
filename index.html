@@ -1,177 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Devki Textile</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devki Textile</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin:0;
-  font-family: 'Poppins', sans-serif;
-  background:#000;
-  color:white;
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 30px;
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.4);
+  z-index:1000;
+}
+
+.logo img{
+  height:45px;
 }
 
 /* HERO */
-.hero {
-  height:90vh;
-  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
-             url('PASTE-BANNER-LINK-HERE');
+.hero{
+  height:100vh;
+  background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1593032465175-481ac7f401a0');
   background-size:cover;
   display:flex;
-  justify-content:center;
   align-items:center;
-  flex-direction:column;
-}
-
-.hero h1 {
-  font-size:42px;
-  letter-spacing:5px;
-  color:#d4af37;
-}
-
-.hero p {
-  color:#aaa;
-}
-
-.hero a {
-  margin-top:15px;
-  padding:12px 20px;
-  background:#d4af37;
-  color:black;
-  text-decoration:none;
-  border-radius:5px;
-}
-
-/* SECTION */
-.section {
-  padding:40px 20px;
+  justify-content:center;
   text-align:center;
 }
 
-.section h2 {
-  color:#d4af37;
+.hero img{
+  width:120px;
+  margin-bottom:20px;
 }
 
-/* GRID */
-.grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
+.hero h1{
+  font-size:60px;
+  letter-spacing:6px;
+  font-family:'Playfair Display',serif;
+}
+
+.hero p{
+  color:#aaa;
+}
+
+.btn{
   margin-top:20px;
-}
-
-/* CARD */
-.card {
-  background:#111;
-  border-radius:15px;
-  overflow:hidden;
-  border:1px solid #222;
-  transition:0.3s;
-}
-
-.card:hover {
-  transform:scale(1.05);
-  border-color:#d4af37;
-}
-
-/* IMAGE (PREMIUM FILTER) */
-.card img {
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  filter:brightness(0.6) contrast(1.2) saturate(0.8);
-}
-
-/* TEXT */
-.card h3 {
-  padding:10px;
-}
-
-.card a {
-  display:block;
-  margin:10px;
-  padding:10px;
-  background:#d4af37;
-  color:black;
+  padding:14px 35px;
+  border-radius:30px;
+  background:#25D366;
+  color:#fff;
   text-decoration:none;
-  border-radius:5px;
 }
 
-/* ABOUT */
-.about {
-  background:#111;
-  margin:20px;
-  padding:20px;
-  border-radius:10px;
+/* SLIDER */
+.slider{
+  overflow:hidden;
+  padding:60px 0;
+}
+
+.slide-track{
+  display:flex;
+  width:calc(250px * 10);
+  animation:scroll 20s linear infinite;
+}
+
+.card{
+  width:250px;
+  height:320px;
+  margin:0 15px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  cursor:pointer;
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.5s;
+  filter:brightness(0.85);
+}
+
+.card:hover img{
+  transform:scale(1.1);
+  filter:brightness(1);
+}
+
+.card h3{
+  position:absolute;
+  bottom:15px;
+  left:15px;
+}
+
+/* ANIMATION */
+@keyframes scroll{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* SECTION */
+.section{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.about{
+  background:linear-gradient(135deg,#111,#1a1a1a);
+}
+
+.about p{
+  max-width:600px;
+  margin:auto;
+  color:#aaa;
+}
+
+/* FEATURES */
+.features{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+
+.feature{
+  width:250px;
+  padding:25px;
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
 }
 
 /* WHATSAPP */
-.whatsapp {
+.whatsapp{
   position:fixed;
-  bottom:20px;
+  bottom:80px;
   right:20px;
   background:#25D366;
-  padding:14px;
+  padding:16px;
   border-radius:50%;
-  color:white;
+  color:#fff;
   text-decoration:none;
+}
+
+/* STICKY */
+.sticky-bar{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background:#25D366;
+  text-align:center;
+  padding:12px;
+}
+
+.sticky-bar a{
+  color:#fff;
+  text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+  .hero h1{font-size:36px;}
 }
 </style>
 </head>
 
 <body>
 
-<div class="hero">
-<h1>DEVKI TEXTILE</h1>
-<p>Luxury Bottom Fabric Collection</p>
-<a href="https://wa.me/919328149912">Get Latest Rates</a>
+<!-- NAV -->
+<div class="nav">
+  <div class="logo">
+    <img src="logo.png">
+  </div>
 </div>
 
-<div class="section">
-<h2>Premium Collection</h2>
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <img src="logo.png">
+    <h1>DEVKI TEXTILE</h1>
+    <p>Premium Bottom Fabrics Supplier</p>
 
-<div class="grid">
+    <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20fabric%20rates.%20Please%20share%20details." class="btn">
+      Get Latest Rate
+    </a>
+  </div>
+</section>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990">
-<h3>Poly Rayon</h3>
-<a href="https://wa.me/919328149912?text=Poly Rayon rate">Enquire</a>
+<!-- SLIDER -->
+<section class="slider">
+  <div class="slide-track">
+
+    <div class="card" onclick="sendWhatsApp('Poly Rayon')">
+      <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
+      <h3>Poly Rayon</h3>
+    </div>
+
+    <div class="card" onclick="sendWhatsApp('American Crepe')">
+      <img src="https://images.unsplash.com/photo-1583001809873-a128495da465">
+      <h3>American Crepe</h3>
+    </div>
+
+    <div class="card" onclick="sendWhatsApp('Dull Santoon')">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+      <h3>Dull Santoon</h3>
+    </div>
+
+    <div class="card" onclick="sendWhatsApp('Indian Santoon')">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+      <h3>Indian Santoon</h3>
+    </div>
+
+    <div class="card" onclick="sendWhatsApp('French Crepe')">
+      <img src="https://images.unsplash.com/photo-1503342452485-86ff0a1a1b4d">
+      <h3>French Crepe</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about">
+  <h2>About Us</h2>
+  <p>
+    Devki Textile delivers premium quality bottom fabrics at wholesale rates.
+    Trusted by businesses for consistency and pricing.
+  </p>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <h2>Why Choose Us</h2>
+  <div class="features">
+    <div class="feature">Daily Updated Rates</div>
+    <div class="feature">Bulk Orders Support</div>
+    <div class="feature">Direct Supplier Pricing</div>
+  </div>
+</section>
+
+<!-- FLOAT -->
+<a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20I%20want%20latest%20fabric%20rates." class="whatsapp">💬</a>
+
+<!-- STICKY -->
+<div class="sticky-bar">
+  <a href="https://wa.me/919328149912?text=Hello%20Devki%20Textile%2C%20Please%20send%20today%20price%20list.">
+    📲 Get Today’s Fabric Rates
+  </a>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf">
-<h3>American Crepe</h3>
-<a href="https://wa.me/919328149912?text=American Crepe rate">Enquire</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21">
-<h3>Dull Santoon</h3>
-<a href="https://wa.me/919328149912?text=Dull Santoon rate">Enquire</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1603252109303-2751441dd157">
-<h3>Indian Santoon</h3>
-<a href="https://wa.me/919328149912?text=Indian Santoon rate">Enquire</a>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1593032465171-8f0b8d53c3c4">
-<h3>French Crepe</h3>
-<a href="https://wa.me/919328149912?text=French Crepe rate">Enquire</a>
-</div>
-
-</div>
-</div>
-
-<div class="about">
-<h2>About Devki Textile</h2>
-<p>We provide premium quality fabrics with daily updated rates. Trusted in textile market for quality and service.</p>
-</div>
-
-<a class="whatsapp" href="https://wa.me/919328149912">💬</a>
+<script>
+function sendWhatsApp(product){
+  let message = `Hello Devki Textile, I am interested in ${product}. Please share price and details.`;
+  let url = "https://wa.me/919328149912?text=" + encodeURIComponent(message);
+  window.open(url, '_blank');
+}
+</script>
 
 </body>
-</html>
+  </html>
