@@ -29,11 +29,6 @@ body{
   z-index:1000;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-}
-
 /* HERO */
 .hero{
   height:100vh;
@@ -86,14 +81,14 @@ body{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:0.5s;
-  filter:brightness(0.85);
 }
 
-.card:hover img{
-  transform:scale(1.1);
-  filter:brightness(1);
-}
+/* PERFECT SPLITS */
+.img1{ object-position:5% center; }
+.img2{ object-position:25% center; }
+.img3{ object-position:50% center; }
+.img4{ object-position:75% center; }
+.img5{ object-position:95% center; }
 
 .card::after{
   content:'';
@@ -178,19 +173,14 @@ body{
 
 <!-- NAV WITH LOGO -->
 <div class="nav">
-  <div class="logo">
-    
-    <!-- SVG LOGO (Premium Style) -->
-    <svg width="160" height="40" viewBox="0 0 300 60">
-      <text x="0" y="40" fill="#d4af37" font-size="28" font-family="Playfair Display">
-        DEVKI
-      </text>
-      <text x="140" y="40" fill="#ffffff" font-size="20" font-family="Poppins">
-        TEXTILE
-      </text>
-    </svg>
-
-  </div>
+  <svg width="160" height="40" viewBox="0 0 300 60">
+    <text x="0" y="40" fill="#d4af37" font-size="28" font-family="Playfair Display">
+      DEVKI
+    </text>
+    <text x="140" y="40" fill="#ffffff" font-size="20" font-family="Poppins">
+      TEXTILE
+    </text>
+  </svg>
 </div>
 
 <!-- HERO -->
@@ -205,32 +195,32 @@ body{
   </div>
 </section>
 
-<!-- SLIDER -->
+<!-- SLIDER WITH SPLIT IMAGE -->
 <section class="slider">
   <div class="slide-track">
 
     <div class="card" onclick="sendWhatsApp('Poly Rayon')">
-      <img src="https://images.unsplash.com/photo-1603251579431-8041402bdeda">
+      <img src="fabrics.jpg" class="img1">
       <h3>Poly Rayon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('American Crepe')">
-      <img src="https://images.unsplash.com/photo-1582582429416-ec3f3f1b3b7c">
+      <img src="fabrics.jpg" class="img2">
       <h3>American Crepe</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('Dull Santoon')">
-      <img src="https://images.unsplash.com/photo-1593032465175-481ac7f401a0">
+      <img src="fabrics.jpg" class="img3">
       <h3>Dull Santoon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('Indian Santoon')">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+      <img src="fabrics.jpg" class="img4">
       <h3>Indian Santoon</h3>
     </div>
 
     <div class="card" onclick="sendWhatsApp('French Crepe')">
-      <img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb">
+      <img src="fabrics.jpg" class="img5">
       <h3>French Crepe</h3>
     </div>
 
